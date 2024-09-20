@@ -1,6 +1,8 @@
 <?php
+ob_start();
 // header and nav
 include "view/partial/header.php";
+//this code causes some problems when put it in the top
 
 
 

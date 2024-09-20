@@ -1,4 +1,6 @@
-    <!-- Cart Section -->
+<?php include"view/partial/header.php"; ?>  
+  
+  <!-- Cart Section -->
     <section class="cart">
         <div class="parent">
             <div class="container mt-5">
@@ -94,3 +96,4 @@
             </div>
         </div>
     </section>
+<?php include "view/partial/footer.php";?>

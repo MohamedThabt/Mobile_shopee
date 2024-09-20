@@ -31,10 +31,26 @@ middel ware >> gmail vertification
 
 
 
+****to do 
+1- make sure admin or not 
+2- write amazing readme
+        -- technologeies back and front
+        -- file structure
+        -- how to setup
+        -- demo images
+        -- linked in post of project 
+        -- featurs 
+            - sever side and clint side validation 
+            - add min dash board
+        -- cart 
+        -- email vertification 
+3- create admin dash board 
+    crud >> users
+    crud >> pruduct
+4- add email vertification 
 
 
-require "../database/DBController.php"; 
-require "../database/Product.php"; 
-$db = new DBController(); 
-$product = new Product($db);
-$product ->getData(table : 'product');
+
+
+use this function it change product.view.php path
+preg_replace('/^view\//', '', $item['item_image'])

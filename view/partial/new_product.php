@@ -15,7 +15,7 @@ $product_shuffle = $product->getData(); // Fetch product data
             <!-- Product Card -->
             <div class="col-md-3">
                 <div class="card">
-                    <a href="<?php printf('%s?item_id=%s', 'view/product.view.php', $item['item_id']); ?>"><img
+                    <a href="<?php printf('%s?item_id=%s', 'product.view.php', $item['item_id']); ?>"><img
                             src="<?php echo $item['item_image'] ?? 'default_image.jpg'; ?>" class="card-img-top"
                             alt="Product Image"></a>
                     <div class="card-body">
@@ -26,9 +26,13 @@ $product_shuffle = $product->getData(); // Fetch product data
                         <p class="card-price">$
                             <?php echo $item['item_price'] ?? '0.00'; ?>
                         </p>
-                        <a href="#" class="btn btn-add-to-cart">
-                            <i class="fas fa-cart-plus"></i> Add to Cart
-                        </a>
+                        <form method="post">
+                            <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
+                            <input type="hidden" name="user_id" value="<?php echo 1; ?>">
+                            <button type="submit" name="top_sale_submit" class="btn btn-warning font-size-12">
+                                <i class="fas fa-cart-plus mr-2"></i> Add to Cart
+                            </button>
+                        </form>
                     </div>
                     <span class="badge-new">New</span>
                 </div>
