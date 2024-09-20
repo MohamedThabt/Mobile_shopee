@@ -1,0 +1,40 @@
+DB name >> mobile_store
+DB >> tables 
+        
+
+- add good router 
+if page not founded show amazing 404 error page 
+
+
+
+
+
+
+
+
+
+
+
+
+technologies : 
+front >> html , css , js , bootstrap , font awesome 
+back >> php , mysql (oop, mvc)
+middel ware >> gmail vertification 
+
+
+-- i create partial to make edite or maitanance easy
+-- data and product not static it depend on data base 
+
+
+
+
+
+
+
+
+
+require "../database/DBController.php"; 
+require "../database/Product.php"; 
+$db = new DBController(); 
+$product = new Product($db);
+$product ->getData(table : 'product');
