@@ -52,7 +52,3 @@ middel ware >> gmail vertification
 
 done🔥
 
-
-
-use this function it change product.view.php path
-preg_replace('/^view\//', '', $item['item_image'])

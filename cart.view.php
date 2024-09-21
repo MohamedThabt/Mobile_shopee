@@ -1,6 +1,11 @@
 <?php 
 include"view/partial/header.php";
-
+// request method post
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+    if (isset($_POST['delete_cart_item'])){
+        // call method addToCart
+       $deletItem=  $Cart->deleteCart($_POST['item_id']);
+    }}
 ?>
 
 <!-- Cart Section -->
@@ -33,9 +38,12 @@ include"view/partial/header.php";
                             </div>
                             <div class="col-md-3">
                                 <div class="d-flex justify-content-end">
-                                    <button class="btn btn-danger me-2">
+                                    <form method="post">
+                                        <input type="hidden" value="<?php echo $item['item_id']?? 0; ?>" name="item_id">
+                                        <button class="btn btn-danger me-2" name="delete_cart_item">
                                         <i class="fas fa-trash-alt"></i> Delete
                                     </button>
+                                    </form>
                                     <button class="btn btn-secondary">
                                         <i class="fas fa-heart"></i> Wish List
                                     </button>
@@ -52,8 +60,13 @@ include"view/partial/header.php";
                 </div>
                 <div class="col-md-4">
                     <div class="subtotal-wrapper">
-                        <h5> Cart Items:<?php echo count($product->getData('cart'))?></h5>
-                        <h5>Subtotal:<?php echo $Cart->getSum($subTotal) . " $";?></h5>
+                        <h5> Cart Items:<?php echo count($product->getData('cart'));?></h5>
+                        <h5>Subtotal:
+                            <?php  
+                            echo isset($subTotal) ? $Cart->getSum($subTotal) . " $" : 0;
+                              ?>
+                        </h5>
+
                         <button class="btn btn-yellow btn-lg">
                             <i class="fas fa-credit-card"></i> Proceed to Buy All
                         </button>
