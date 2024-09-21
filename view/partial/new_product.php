@@ -1,5 +1,5 @@
 <?php
-$product_shuffle = $product->getData(); // Fetch product data
+
 ?>
 
 <section class="new-products-section">
@@ -29,7 +29,7 @@ $product_shuffle = $product->getData(); // Fetch product data
                         <form method="post">
                             <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
                             <input type="hidden" name="user_id" value="<?php echo 1; ?>">
-                            <button type="submit" name="top_sale_submit" class="btn btn-warning font-size-12">
+                            <button type="submit" name="new_product_submit" class="btn btn-warning font-size-12">
                                 <i class="fas fa-cart-plus mr-2"></i> Add to Cart
                             </button>
                         </form>

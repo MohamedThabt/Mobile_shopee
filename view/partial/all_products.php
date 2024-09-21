@@ -1,14 +1,8 @@
 <?php
-// Create an instance of the Cart class, passing the DBController instance
-$Cart = new Cart($db);
 
-// request method post
-if($_SERVER['REQUEST_METHOD'] == "POST"){
-    if (isset($_POST['top_sale_submit'])){
-        // call method addToCart
-        $Cart->addToCart($_POST['user_id'], $_POST['item_id']);
-    }
-}
+
+
+
 ?>
 
 
@@ -35,7 +29,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                         <form method="post">
                             <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
                             <input type="hidden" name="user_id" value="<?php echo 1; ?>">
-                            <button type="submit" name="top_sale_submit" class="btn btn-warning font-size-12">
+                            <button type="submit" name="all_product_submit" class="btn btn-warning font-size-12">
                                 <i class="fas fa-cart-plus mr-2"></i> Add to Cart
                             </button>
                         </form>

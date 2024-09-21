@@ -25,4 +25,12 @@ class Product {
         
         return $resultArray;
     }
+    // get product with item_id
+    public function getProduct($item_id=null, $table ='product'){
+        if(isset($item_id)){
+            $stmt = $this->db->query("SELECT * FROM {$table} WHERE item_id ={$item_id}");
+            $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $resultArray;
+        }
+    }
 }

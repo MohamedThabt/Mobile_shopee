@@ -1,6 +1,5 @@
  <?php
- $product_shuffle = $product->getData();
-
+ 
 ?>
 
 <section class="top-sales-section">

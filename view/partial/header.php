@@ -21,7 +21,7 @@
         <!-- primary nav  -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.php">
                     <img src="view/assets/online-shop.png" alt="Store Icon" width="30" height="30"
                         class="d-inline-block align-text-top"> <!-- Your custom icon -->
                 </a>
@@ -72,7 +72,8 @@
                  <a href="cart.view.php" class="btn btn-outline-light position-relative me-3 mt-2">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            2
+                            <!-- number of cart item -->
+                            <?php echo count($product->getData('cart'))?>
                             <span class="visually-hidden">items in cart</span>
                         </span>
                     </a>

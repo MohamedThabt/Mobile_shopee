@@ -1,99 +1,65 @@
-<?php include"view/partial/header.php"; ?>  
-  
-  <!-- Cart Section -->
-    <section class="cart">
-        <div class="parent">
-            <div class="container mt-5">
-                <h2>Your Cart</h2>
-                <div class="row mt-4">
-                    <!-- Products List -->
-                    <div class="col-md-8">
-                        <!-- Cart Item 1 -->
-                        <div class="cart-item row align-items-center">
-                            <div class="col-md-2">
-                                <img src="https://via.placeholder.com/80" alt="Product Image">
-                            </div>
-                            <div class="col-md-3">
-                                <h5>Mobile X</h5>
-                                <p>XYZ Tech</p>
-                                <p><strong>Price: $499.00</strong></p>
-                            </div>
-                            <div class="col-md-3 quantity-wrapper">
-                                <input type="number" class="quantity-input form-control" value="1" min="1" max="10">
-                            </div>
-                            <div class="col-md-2 text-center">
-                                <p><strong>Subtotal:</strong> $499.00</p>
-                            </div>
-                            <div class="col-md-1 text-center">
-                                <button class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
-                            </div>
-                            <div class="col-md-1 text-center">
-                                <button class="btn btn-wishlist btn-sm">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                            </div>
-                        </div>
+<?php 
+include"view/partial/header.php";
 
-                        <!-- Cart Item 2 -->
-                        <div class="cart-item row align-items-center">
+?>
+
+<!-- Cart Section -->
+<section class="cart">
+    <div class="parent">
+        <div class="container mt-5">
+            <h2>Your Cart</h2>
+            <div class="row mt-4">
+                <!-- Products List -->
+                <div class="col-md-8">
+                <?php 
+                    // to fetch every product info
+                    $product->getProduct();
+                    // to fetch all cart items:
+                    foreach($product->getData(table:'cart') as $item):
+                        $cart = $product->getProduct($item['item_id']);
+                        $subTotal[] = array_map(function ($item){
+                    ?>
+                    <div class="card mb-3">
+                        <div class="row g-0 align-items-center">
                             <div class="col-md-2">
-                                <img src="https://via.placeholder.com/80" alt="Product Image">
+                                <img src="<?php echo $item['item_image'] ?? 'default_image.jpg'; ?>" alt="Product Image" class="img-fluid rounded-start">
+                            </div>
+                            <div class="col-md-7">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $item['item_name'] ?? 'Mobile'; ?></h5>
+                                    <p class="card-text"><?php echo $item['item_barnd'] ?? 'Company'; ?></p>
+                                    <p class="card-text"><strong><?php echo $item['item_price'] ?? '00.00'; ?></strong></p>
+                                </div>
                             </div>
                             <div class="col-md-3">
-                                <h5>Tablet Pro</h5>
-                                <p>ABC Tech</p>
-                                <p><strong>Price: $299.00</strong></p>
-                            </div>
-                            <div class="col-md-3 quantity-wrapper">
-                                <input type="number" class="quantity-input form-control" value="2" min="1" max="10">
-                            </div>
-                            <div class="col-md-2 text-center">
-                                <p><strong>Subtotal:</strong> $598.00</p>
-                            </div>
-                            <div class="col-md-1 text-center">
-                                <button class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
-                            </div>
-                            <div class="col-md-1 text-center">
-                                <button class="btn btn-wishlist btn-sm">
-                                    <i class="fas fa-heart"></i>
-                                </button>
+                                <div class="d-flex justify-content-end">
+                                    <button class="btn btn-danger me-2">
+                                        <i class="fas fa-trash-alt"></i> Delete
+                                    </button>
+                                    <button class="btn btn-secondary">
+                                        <i class="fas fa-heart"></i> Wish List
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-
+                    <?php
+                            return $item['item_price'];
+                        }, $cart); // closing array_map function
+                    endforeach;
+                ?>
                     <!-- Subtotal and Proceed to Checkout -->
-                    <div class="col-md-4">
-                        <div class="subtotal-wrapper">
-                            <h5>Subtotal: $1,097.00</h5>
-                            <button class="btn btn-yellow btn-lg">
-                                <i class="fas fa-credit-card"></i> Proceed to Buy All
-                            </button>
-                        </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="subtotal-wrapper">
+                        <h5> Cart Items:<?php echo count($product->getData('cart'))?></h5>
+                        <h5>Subtotal:<?php echo $Cart->getSum($subTotal) . " $";?></h5>
+                        <button class="btn btn-yellow btn-lg">
+                            <i class="fas fa-credit-card"></i> Proceed to Buy All
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Modal for Add to Cart Alert -->
-        <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="cartModalLabel">Added to Cart</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        The product has been successfully added to your cart!
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-<?php include "view/partial/footer.php";?>
+    </div>
+</section>
