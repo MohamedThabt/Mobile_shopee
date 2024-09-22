@@ -69,7 +69,7 @@
                     </ul>
                 </div>
                 <div class="d-flex justify-content-end">
-                    <a href="cart.view.php" class="btn btn-outline-light position-relative me-3 mt-2">
+                    <a href="cart.php" class="btn btn-outline-light position-relative me-3 mt-2">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                             <!-- number of cart item -->
@@ -87,7 +87,7 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Wish List -->
                         <li class="nav-item">
-                            <a class="nav-link" href="wish_list.view.php">
+                            <a class="nav-link" href="wish_list.php">
                                 <i class="fas fa-heart"></i> Wish List
                             </a>
                         </li>

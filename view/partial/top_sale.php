@@ -26,7 +26,7 @@
                     <!-- Product Card -->
                     <div class="col-md-4">
                         <div class="card">
-                            <a href="<?php printf('%s?item_id=%s', 'product.view.php', $item['item_id']); ?>"><img src="<?php echo $item['item_image'] ?? 'default_image.jpg'; ?>" class="card-img-top" alt="Product Image"></a>
+                            <a href="<?php printf('%s?item_id=%s', 'product.php', $item['item_id']); ?>"><img src="<?php echo $item['item_image'] ?? 'default_image.jpg'; ?>" class="card-img-top" alt="Product Image"></a>
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $item['item_name'] ?? 'Product Name'; ?></h5>
                                 <p class="card-text">Latest tech with amazing features.</p>

@@ -16,7 +16,7 @@
             <div class="col-md-3">
                 <div class="card">
                     <!-- fetch product id by get metho -->
-                <a href="<?php printf('%s?item_id=%s', 'product.view.php', $item['item_id']); ?>"><img src="<?php echo $item['item_image'] ?? 'default_image.jpg'; ?>" class="card-img-top"
+                <a href="<?php printf('%s?item_id=%s', 'product.php', $item['item_id']); ?>"><img src="<?php echo $item['item_image'] ?? 'default_image.jpg'; ?>" class="card-img-top"
                         alt="iPhone 13"></a> 
                     <div class="card-body">
                         <h5 class="card-title">

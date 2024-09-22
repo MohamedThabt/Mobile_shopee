@@ -1,9 +1,7 @@
-<?php
-include"view/partial/header.php";
-?>
+
 <?php
     // fetch product id
-$item_id=$_POST['item_id'];
+$item_id=$_GET['item_id'];
 foreach($product->getData() as $item):
     if($item['item_id']== $item_id): 
 ?>
@@ -63,4 +61,3 @@ foreach($product->getData() as $item):
 endif; 
 endforeach;
 ?>
-<?php include "view/partial/footer.php";?>

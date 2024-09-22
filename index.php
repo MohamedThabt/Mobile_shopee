@@ -1,8 +1,10 @@
 <?php
 ob_start();
-// header and nav
+
+
+//header (html header , nav1 , nav2) 
+//this code causes some problems when put it in the top because it's need ob()
 include "view/partial/header.php";
-//this code causes some problems when put it in the top
 
 
 
@@ -11,9 +13,9 @@ include "view/partial/header.php";
 include "view/partial/banner_carsoul.php";
 // 2 Top sale  
 include "view/partial/top_sale.php";
-// 2 new
+// 3 new
 include "view/partial/new_product.php";
-// 1 All products
+// 4 All products
 include "view/partial/all_products.php";
 
 
