@@ -69,7 +69,7 @@
                     </ul>
                 </div>
                 <div class="d-flex justify-content-end">
-                 <a href="cart.view.php" class="btn btn-outline-light position-relative me-3 mt-2">
+                    <a href="cart.view.php" class="btn btn-outline-light position-relative me-3 mt-2">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                             <!-- number of cart item -->

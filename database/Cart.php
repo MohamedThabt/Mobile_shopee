@@ -43,7 +43,6 @@ class Cart{
                 }
             }
         }
-        // Return false if no params were passed or if there was no connection
         return false;
     }
 
@@ -104,8 +103,8 @@ class Cart{
         }}
 
     
-     // get item_it of shopping cart list
-     public function getCartId($cartArray = null, $key = "item_id"){
+    // get item_it of shopping cart list
+    public function getCartId($cartArray = null, $key = "item_id"){
         if ($cartArray != null){
             $cart_id = array_map(function ($value) use($key){
                 return $value[$key];
@@ -117,7 +116,7 @@ class Cart{
 
 
 // add to wish list from cart
-  public function addToWishList($item_id = null, $saveTable = "wishlist", $fromTable = "cart"){
+public function addToWishList($item_id = null, $saveTable = "wishlist", $fromTable = "cart"){
     if ($item_id != null) {
         try {
             // Start transaction
@@ -146,8 +145,11 @@ class Cart{
 
     return false;
 }
+
+
+
 // add to wish list from cart
-  public function addToCartFromWishList($item_id = null, $saveTable = "cart", $fromTable = "wishlist"){
+public function addToCartFromWishList($item_id = null, $saveTable = "cart", $fromTable = "wishlist"){
     if ($item_id != null) {
         try {
             // Start transaction
@@ -179,7 +181,7 @@ class Cart{
 
 
     // delete wish list item 
-    public function deleteWishListItem($item_id = null, $table = 'wishlist'){
+public function deleteWishListItem($item_id = null, $table = 'wishlist'){
         try {
             $query = "DELETE FROM {$table} WHERE item_id = :item_id";
             $stmt = $this->db->conn->prepare($query);
@@ -196,7 +198,8 @@ class Cart{
         } catch (PDOException $e) {
             error_log("Failed to delete cart item: " . $e->getMessage());
             return false;
-        }}
+        }
+    }
 
     
     

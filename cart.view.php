@@ -1,6 +1,6 @@
-<?php 
-include"view/partial/header.php";
-?>
+<?php include"view/partial/header.php";?>
+
+
 
 <!-- Cart Section -->
 <section class="cart">
@@ -10,7 +10,7 @@ include"view/partial/header.php";
             <div class="row mt-4">
                 <!-- Products List -->
                 <div class="col-md-8">
-                <?php 
+                    <?php 
                     // to fetch every product info
                     $product->getProduct();
                     // to fetch all cart items:
@@ -21,13 +21,20 @@ include"view/partial/header.php";
                     <div class="card mb-3">
                         <div class="row g-0 align-items-center">
                             <div class="col-md-2">
-                                <img src="<?php echo $item['item_image'] ?? 'default_image.jpg'; ?>" alt="Product Image" class="img-fluid rounded-start">
+                                <img src="<?php echo $item['item_image'] ?? 'default_image.jpg'; ?>" alt="Product Image"
+                                    class="img-fluid rounded-start">
                             </div>
                             <div class="col-md-7">
                                 <div class="card-body">
-                                    <h5 class="card-title"><?php echo $item['item_name'] ?? 'Mobile'; ?></h5>
-                                    <p class="card-text"><?php echo $item['item_brand'] ?? 'Company'; ?></p>
-                                    <p class="card-text"><strong><?php echo $item['item_price'] ?? '00.00'; ?></strong></p>
+                                    <h5 class="card-title">
+                                        <?php echo $item['item_name'] ?? 'Mobile'; ?>
+                                    </h5>
+                                    <p class="card-text">
+                                        <?php echo $item['item_brand'] ?? 'Company'; ?>
+                                    </p>
+                                    <p class="card-text"><strong>
+                                            <?php echo $item['item_price'] ?? '00.00'; ?>
+                                        </strong></p>
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -53,11 +60,13 @@ include"view/partial/header.php";
                         }, $cart); // closing array_map function
                     endforeach;
                 ?>
-                    <!-- Subtotal and Proceed to Checkout -->
+                <!-- Subtotal and Proceed to Checkout -->
                 </div>
                 <div class="col-md-4">
                     <div class="subtotal-wrapper">
-                        <h5> Cart Items:<?php echo count($product->getData('cart'));?></h5>
+                        <h5> Cart Items:
+                            <?php echo count($product->getData('cart'));?>
+                        </h5>
                         <h5>Subtotal:
                             <?php  
                             echo isset($subTotal) ? $Cart->getSum($subTotal) . " $" : 0;
