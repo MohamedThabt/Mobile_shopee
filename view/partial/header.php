@@ -15,7 +15,7 @@
 
 <body>
     <!-- this code causes some problems when put it in the top -->
-    <?php  require "function.php"; ?>
+    <?php  require "controller/function.php"; ?>
     <!-- Header  -->
     <header>
         <!-- primary nav  -->
@@ -87,7 +87,7 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Wish List -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="wish_list.view.php">
                                 <i class="fas fa-heart"></i> Wish List
                             </a>
                         </li>

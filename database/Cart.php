@@ -35,7 +35,7 @@ class Cart{
                     $result = $stmt->execute($params);
 
                     // Return true if the query was successful
-                    return $result;
+                    return $result; 
                 } catch (PDOException $e) {
                     // Log the error
                     error_log("Database Insert Error: " . $e->getMessage());
@@ -51,7 +51,7 @@ class Cart{
 
 
 
-
+    // add to cart
     public function addToCart($userid, $itemid){
         if (isset($userid) && isset($itemid)){
             $params = array(
@@ -102,6 +102,7 @@ class Cart{
             error_log("Failed to delete cart item: " . $e->getMessage());
             return false;
         }}
+
     
      // get item_it of shopping cart list
      public function getCartId($cartArray = null, $key = "item_id"){
@@ -112,7 +113,91 @@ class Cart{
             return $cart_id;
         }
     }
+
+
+
+// add to wish list from cart
+  public function addToWishList($item_id = null, $saveTable = "wishlist", $fromTable = "cart"){
+    if ($item_id != null) {
+        try {
+            // Start transaction
+            $this->db->conn->beginTransaction();
+
+            // Insert item into wishlist
+            $insertQuery = "INSERT INTO {$saveTable} (SELECT * FROM {$fromTable} WHERE item_id = :item_id)";
+            $stmt = $this->db->conn->prepare($insertQuery);
+            $stmt->bindParam(':item_id', $item_id, PDO::PARAM_INT);
+            $stmt->execute();
+
+            // Delete item from cart
+            $deleteQuery = "DELETE FROM {$fromTable} WHERE item_id = :item_id";
+            $stmt = $this->db->conn->prepare($deleteQuery);
+            $stmt->bindParam(':item_id', $item_id, PDO::PARAM_INT);
+            $stmt->execute();
+
+            // Commit transaction
+            $this->db->conn->commit();
+        } catch (PDOException $e) {
+            // Roll back the transaction if something failed
+            $this->db->conn->rollBack();
+            echo "Error: " . $e->getMessage();
+        }
+    }
+
+    return false;
+}
+// add to wish list from cart
+  public function addToCartFromWishList($item_id = null, $saveTable = "cart", $fromTable = "wishlist"){
+    if ($item_id != null) {
+        try {
+            // Start transaction
+            $this->db->conn->beginTransaction();
+
+            // Insert item into wishlist
+            $insertQuery = "INSERT INTO {$saveTable} (SELECT * FROM {$fromTable} WHERE item_id = :item_id)";
+            $stmt = $this->db->conn->prepare($insertQuery);
+            $stmt->bindParam(':item_id', $item_id, PDO::PARAM_INT);
+            $stmt->execute();
+
+            // Delete item from cart
+            $deleteQuery = "DELETE FROM {$fromTable} WHERE item_id = :item_id";
+            $stmt = $this->db->conn->prepare($deleteQuery);
+            $stmt->bindParam(':item_id', $item_id, PDO::PARAM_INT);
+            $stmt->execute();
+
+            // Commit transaction
+            $this->db->conn->commit();
+        } catch (PDOException $e) {
+            // Roll back the transaction if something failed
+            $this->db->conn->rollBack();
+            echo "Error: " . $e->getMessage();
+        }
+    }
+
+    return false;
+}
+
+
+    // delete wish list item 
+    public function deleteWishListItem($item_id = null, $table = 'wishlist'){
+        try {
+            $query = "DELETE FROM {$table} WHERE item_id = :item_id";
+            $stmt = $this->db->conn->prepare($query);
+            $stmt->bindParam(':item_id', $item_id, PDO::PARAM_INT);
+            $result = $stmt->execute();
     
+            if ($result) {
+                // Instead of immediate redirection, set a flag or session variable
+                $_SESSION['redirect'] = $_SERVER['PHP_SELF'];
+                return true; // Indicate successful deletion
+            }
+    
+            return $result;
+        } catch (PDOException $e) {
+            error_log("Failed to delete cart item: " . $e->getMessage());
+            return false;
+        }}
+
     
     
     }
