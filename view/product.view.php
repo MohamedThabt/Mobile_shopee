@@ -27,7 +27,7 @@ foreach($product->getData() as $item):
                             if (in_array($item['item_id'], $Cart->getCartId($product->getData('cart')) ?? [])){
                                 echo '<button type="submit" disabled class="btn btn-success font-size-12">In the Cart</button>';
                             }else{
-                                echo '<button type="submit" name="submit_add_to_cart" class="btn btn-warning font-size-12">Add to Cart</button>';
+                                echo '<button type="submit" name="submit_add_to_cart" class="btn btn-warning font-size-12"><i class="fas fa-cart-plus"></i> Add to Cart</button>';
                             }
                             ?>
 
