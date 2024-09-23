@@ -6,9 +6,9 @@ require "../database/user.php";
 // Check request method and submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     $error = [];
+
     
-    
- //======================================
+//======================================
 //        validation                  ||
 //======================================  
 // use trim in condition to validate white spaces

@@ -1,10 +1,3 @@
-<?php
-
-
-
-
-?>
-
 
 <!-- all product -->
 <section class="all-products-section">

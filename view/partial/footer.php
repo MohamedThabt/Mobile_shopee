@@ -21,10 +21,10 @@
                 <div class="col-md-4 mb-3">
                     <h5>Connect With Us</h5>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/mohamed.thabet.545?mibextid=kFxxJD"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/m7mad_thabet/"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/m7mad_thabet/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/mohamed-thabet-5694462a0?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BJVmhEe2rRsGWlP7HkwKDyg%3D%3D"><i class="fab fa-linkedin"></i></a>
                     </div>
                     <p class="mt-3">
                         <i class="fas fa-envelope"></i> Email: contact@onlinemobilestore.com<br>
