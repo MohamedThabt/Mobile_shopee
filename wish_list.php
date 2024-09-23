@@ -1,10 +1,17 @@
 
 <!-- header (html header , nav1 , nav2) -->
-<?php include"view/partial/header.php";?>
+<?php 
+include "view/partial/header.php";
 
 
 
 
+  
+//  check if wish list  empty or not  
+if(count($product->getData('wishlist'))){
 
-<!-- check if wish list  empty or not  -->
-<?php count($product->getData('cart'))? include"view/wish_list.view.php" : include"view/empty.wish_list.php" ?>
+    include "view/wish_list.view.php";
+    
+   }else{
+     include "view/empty.wish_list.php" ;
+   }
