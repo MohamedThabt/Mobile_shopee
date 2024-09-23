@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -91,18 +93,21 @@
                                 <i class="fas fa-heart"></i> Wish List
                             </a>
                         </li>
-                        <!-- Login -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fas fa-sign-in-alt"></i> Login
-                            </a>
-                        </li>
+                        <?php if(isset($_SESSION['user_name'])): ?>
                         <!-- Logout -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="controller/logout.contr.php">
                                 <i class="fas fa-sign-out-alt"></i> Logout
                             </a>
                         </li>
+                        <?php else: ?>
+                        <!-- Login -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.view.php">
+                                <i class="fas fa-sign-in-alt"></i> Login
+                            </a>
+                        </li>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </div>
