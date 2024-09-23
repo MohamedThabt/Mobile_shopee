@@ -27,8 +27,8 @@
                         <a href="https://www.linkedin.com/in/mohamed-thabet-5694462a0?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BJVmhEe2rRsGWlP7HkwKDyg%3D%3D"><i class="fab fa-linkedin"></i></a>
                     </div>
                     <p class="mt-3">
-                        <i class="fas fa-envelope"></i> Email: contact@onlinemobilestore.com<br>
-                        <i class="fas fa-phone"></i> Phone: (123) 456-7890
+                        <i class="fas fa-envelope"></i> Email:mohamedthabetthabet36@gmail.com<br>
+                        <i class="fas fa-phone"></i> Phone: 01095843957
                     </p>
                 </div>
             </div>

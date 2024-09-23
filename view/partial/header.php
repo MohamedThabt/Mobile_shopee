@@ -35,7 +35,7 @@
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">On Sale</a>
+                            <a class="nav-link" href="index.php">On Sale</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
@@ -43,12 +43,12 @@
                                 Categories
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                                <li><a class="dropdown-item" href="#">Smartphones</a></li>
-                                <li><a class="dropdown-item" href="#">Tablets</a></li>
+                                <li><a class="dropdown-item" href="index.php">Smartphones</a></li>
+                                <li><a class="dropdown-item" href="index.php">Tablets</a></li>
                                 <li>
                                     <hr class="dropdown-divider bg-secondary">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Accessories</a></li>
+                                <li><a class="dropdown-item" href="index.php">Accessories</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -57,16 +57,16 @@
                                 Product
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="productDropdown">
-                                <li><a class="dropdown-item" href="#">New Arrivals</a></li>
-                                <li><a class="dropdown-item" href="#">Best Sellers</a></li>
+                                <li><a class="dropdown-item" href="index.php">New Arrivals</a></li>
+                                <li><a class="dropdown-item" href="index.php">Best Sellers</a></li>
                                 <li>
                                     <hr class="dropdown-divider bg-secondary">
                                 </li>
-                                <li><a class="dropdown-item" href="#">All Products</a></li>
+                                <li><a class="dropdown-item" href="index.php">All Products</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Coming Soon</a>
+                            <a class="nav-link" href="index.php">Coming Soon</a>
                         </li>
                     </ul>
                 </div>
